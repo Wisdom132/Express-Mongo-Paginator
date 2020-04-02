@@ -14,9 +14,9 @@ This creates a new instance of `express-mongo-paginator`
 ### paginator.paginator(*collection*,*currentpage*,*perpage*)
 
 #### Arguments
-`collection` :This is the collection you want to paginate;
-`currentpage` : Current page;;
-`perpage` : Number of items in a collection to be displayed perpage;
+- `collection` :This is the collection you want to paginate
+- `currentpage` : Current page;;
+- `perpage` : Number of items in a collection to be displayed perpage;
 
 ### usage
 
