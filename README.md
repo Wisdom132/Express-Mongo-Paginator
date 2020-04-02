@@ -1,24 +1,24 @@
-#Express-Mongo-Paginator
+# Express-Mongo-Paginator
 
 This is a simple package that paginates your mongodb collection.It uses the mongoose ORM behind the scene.
 
-###Install
+### Install
 `npm install express-mongo-paginator`
 
-###api
+### api
 `const paginator = require("express-mongo-paginator")`
 
-###paginator
+### paginator
 This creates a new instance of `express-mongo-paginator`
 
-###paginator.paginator(collection,currentpage,perpage)
+### paginator.paginator(collection,currentpage,perpage)
 
-####Arguments
+#### Arguments
 `collection` :This is the collection you want to paginate;
 `currentpage` : Current page;;
 `perpage` : Number of items in a collection to be displayed perpage;
 
-###usage
+### usage
 
 ```
 const express = require('express');
