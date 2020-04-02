@@ -11,7 +11,7 @@ This is a simple package that paginates your mongodb collection.It uses the mong
 ### paginator
 This creates a new instance of `express-mongo-paginator`
 
-### paginator.paginator(collection,currentpage,perpage)
+### paginator.paginator(*collection*,*currentpage*,*perpage*)
 
 #### Arguments
 `collection` :This is the collection you want to paginate;
