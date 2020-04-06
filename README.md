@@ -17,7 +17,7 @@ This creates a new instance of `express-mongo-paginator`
 - `collection` :This is the collection you want to paginate
 - `currentpage` : Current page;;
 - `perpage` : Number of items in a collection to be displayed perpage;
-_ `filterConditions`: Add querys to your collection
+- `filterConditions`: Add querys to your collection
 
 ### usage
 
