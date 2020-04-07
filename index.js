@@ -8,7 +8,7 @@ let paginator = async (collection, page, perpage, definedConditions) => {
   let conditions = [];
   definedConditions.forEach(query => {
 
-    let sortedQuery = Object.entries(query).sort((a, b) => b[0].localeCompare(a[0])); // Emmmm i actually did this for proper ordering.Js can be funny atimes
+    let sortedQuery = Object.entries(query).sort((a, b) => b[0].localeCompare(a[0])); // Emmmm i actually did this for proper ordering.
     for (let [key, value] of sortedQuery) {
       if (key) {
         conditions = [...conditions,
@@ -28,7 +28,7 @@ let paginator = async (collection, page, perpage, definedConditions) => {
       $or: conditions
     };
   }
-
+  console.log(findConditions)
   let response = await collection.find(findConditions).skip(skipMath).limit(perPage);
   let count = await collection.countDocuments();
   return data = {
