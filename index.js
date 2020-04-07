@@ -10,12 +10,12 @@ let paginator = async (collection, page, perpage, definedConditions) => {
 
     let sortedQuery = Object.entries(query).sort((a, b) => b[0].localeCompare(a[0])); // Emmmm i actually did this for proper ordering.
     for (let [key, value] of sortedQuery) {
+      if (value === undefined) return
       if (key) {
         conditions = [...conditions,
           {
             [key]: value
           }
-
         ];
       }
     }
