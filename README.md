@@ -11,13 +11,14 @@ This is a simple package that paginates your mongodb collection.It uses the mong
 ### paginator
 This creates a new instance of `express-mongo-paginator`
 
-### paginator.paginator(*collection*,*currentpage*,*perpage*,*filterConditions*)
+### paginator.paginator(*collection*,*currentpage*,*perpage*,*filterConditions*,*IdToBePopulated*)
 
 #### Arguments
-- `collection` :This is the collection you want to paginate
-- `currentpage` : Current page;;
+- `collection` :This is the collection you want to paginate;
+- `currentpage` : Current page;
 - `perpage` : Number of items in a collection to be displayed perpage;
-- `filterConditions`: Add querys to your collection
+- `filterConditions`: Add querys to your collection.If there aren't any filter condition pass and empty array `[]`.
+- `IdToBePopulated` : Document To be populated.
 
 ### usage
 
@@ -33,7 +34,7 @@ app.get("/get-users", async (req, res) => {
     try {
         let data = await paginator.paginator(User, page, 2,[{
             name: req.query.name
-        }]);
+        }],"SchoolId,CategoryId");
         res.status(200).json({data})
     } catch (err) {
         res.status(500).json(err)
