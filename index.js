@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 let paginator = async (collection, page, perpage, definedConditions, idToBePopulated) => {
 
-
   let splittedData;
   if (idToBePopulated) {
     splittedData = idToBePopulated.replace(/,/g, " ").toString();
   }
-
   var perPage = perpage || 2
   var page = page || 1;
   var skipMath = (perPage * page) - perPage;
@@ -16,8 +14,8 @@ let paginator = async (collection, page, perpage, definedConditions, idToBePopul
 
     let sortedQuery = Object.entries(query).sort((a, b) => b[0].localeCompare(a[0])); // Emmmm i actually did this for proper ordering.
     for (let [key, value] of sortedQuery) {
-      if (value === undefined) return
-      if (key) {
+
+      if (value !== undefined) {
         conditions = [...conditions,
           {
             [key]: value
